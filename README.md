@@ -46,7 +46,7 @@ My reach goals are to add a customized logo to the mobile version and revise pas
 |---|---| ---|
 |Day 1| Project Description | Complete
 |Day 1| Wireframes / Priority Matrix / Timeline | Complete
-|Day 3| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|Day 3| Core Application Structure (HTML, CSS, etc.) | Complete
 |Day 4| MVP & Bug Fixes | Incomplete
 |Day 5| Final Touches | Incomplete
 |Day 6| Present | Incomplete
@@ -76,17 +76,17 @@ The functionality will then be divided into two separate lists: MVP and PostMVP.
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
 
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Layout and Structure | H |  3hrs|                |           4hrs |
-| Hamburger Menu | H |        1hr |              - |              - |
-| Scrolling/nav  | H |        2hrs |              - |              - |
-| Carousel       | H |        3hrs |              - |              - |
-| Google Sheets API | H |     2hrs |              - |              - |
-| Links to social | H |       0.5hrs |              - |              - |
-| Form functionality | H |    3hr |              - |              - |
-| Prior projects | M |       6hrs |              - |              - |
-| Name logo | L |             2hrs |              - |              - |
+| Layout and Structure | H |  3hrs|           3hrs |         5hrs |
+| Hamburger Menu | H |        1hr |       0.5hrs - |         0.5hrs |
+| Scrolling/nav  | H |        2hrs |               |         2mins |
+| Carousel       | H |        3hrs |              - |        0.5hrs |
+| Google Sheets API | H |     2hrs |              - |            - |
+| Links to social | H |       0.5hrs |              - |          - |
+| Form functionality | H |    3hr |              - |            - |
+| Prior projects | M |       6hrs |              - |            - |
+| Name logo | L |             2hrs |              1hr |        1hr |
 | Total |       H |        6hrs|             5hrs |           5hrs |
 
 ## Helper Functions
@@ -97,7 +97,7 @@ Helper functions should be generic enough that they can be reused in other appli
 | Example | Example |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project.
+ Use this section to list all supporting libraries and their role in the project.
 
 ## Code Snippet
 
@@ -118,4 +118,4 @@ Here I will document what changes were made and the reasoning behind those chang
 Here I will list of all major issues encountered and their resolutions.
 
 **ERROR**:                               
-**RESOLUTION**: 
+**RESOLUTION**:
