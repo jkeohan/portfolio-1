@@ -1,5 +1,20 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Dosis', sans-serif;
+}
+
+#title {
+  display: none;
+}
+
+#logo {
+  border: 2px solid black;
+  border-radius: 100%;
+  font-size: 2rem;
+  padding: 5px;
 }
 
 .col-lg {
@@ -92,6 +107,20 @@ footer {
 
 #copyright {
   padding-top: 8px;
+}
+
+@media (min-width: 600px) {
+  #title {
+    display: block;
+  }
+
+  #logo {
+    display: none;
+  }
+
+  #hamburger-bio {
+    display: none;
+  }
 }
 
 @media (min-width: 900px) {
