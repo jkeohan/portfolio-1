@@ -36,6 +36,8 @@ body {
 #brand {
   background-color: papayawhip;
   color: #333333;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 #brand h4 {
