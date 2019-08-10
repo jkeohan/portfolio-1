@@ -1,5 +1,6 @@
 /*********** VARIABLES ***************/
 const hamburgerMenu = document.getElementById('hamburger-menu');
+const navLinks = document.getElementsByClassName('nav-link');
 
 /************* LINKING GOOGLE SHEETS **********/
 let originalURL =
@@ -27,19 +28,14 @@ fetch(source)
      createCards(projects)
 })
 
-/*********** EVENT LISTENERS ***************/
+/*********** EVENT LISTENERS & FUNCTION CALLS ***************/
 hamburgerMenu.addEventListener('click', updateHamburgerStyles);
-
+// removeHamburgerMenu();
 
 /*********** FUNCTION DEFINITIONS ***************/
 
 function updateHamburgerStyles() {
   const hamburgerBio = document.getElementById('hamburger-bio');
-  const navLinks = document.getElementsByClassName('nav-link');
-  const navBackground = document.querySelector('.bg-light')
-  console.log(navBackground)
-
-  // navBackground.style.background = 'rgba(248,249,250,0.1)';
 
   hamburgerBio.style.padding = '5% 15%';
   hamburgerBio.style.textAlign = 'center';
@@ -47,6 +43,20 @@ function updateHamburgerStyles() {
     navLinks[i].style.textAlign = 'center';
   }
 }
+
+// function removeHamburgerMenu() {
+//   // grab nav links
+//   // if a nav link is clicked, toggle the hamburger menu
+//   const navCollapse = document.querySelector('.navbar-collapse');
+//   console.log('this is navCollapse', navCollapse)
+//   navLinks.forEach( (e, i) => {
+//     e.addEventListener('click', () => {
+//       hamburgerMenu.classList.add('collapsed');
+//       hamburgerMenu.setAttribute('aria-expanded', 'false');
+//       navCollapse.classList.remove('show');
+//     })
+//   })
+// }
 
 /********* CREATE CAROUSEL CARDS **********/
 class Card {
@@ -57,15 +67,6 @@ class Card {
   }
 
   render() {
-    // creates div element for container -
-    // const carouselItem = document.createElement('div')
-    // carouselItem.classList.add('carousel', 'slide');
-    // carouselItem.setAttribute('data-ride', 'carousel');
-
-// creates div element for card
-    // const cardContainer = document.createElement('div')
-    // cardContainer.classList.add('carousel-inner');
-
 // target carousel-inner (container for all carousel-items) & create div that will hold each image
     const carouselInner = document.querySelector('.carousel-inner');
     console.log(carouselInner);
@@ -73,33 +74,19 @@ class Card {
     const cardContainer = document.createElement('div')
     cardContainer.classList.add('carousel-item');
     cardContainer.setAttribute('data-touch', 'true');
-
 // create img element for & add current image
     const image  = document.createElement('img')
     image.setAttribute('src', this.image)
     image.classList.add('d-block', 'w-100')
-
-// create span to add card-title class & card title text
-    // const cardTitle = document.createElement('span')
-    // cardTitle.classList.add('card-title');
-    // cardTitle.innerText = this.title
-
 // creates class for content and adds current card description to it
     const cardContent = new CardContent(this.description)
     console.log('this is cardContent: ', cardContent)
-
 // appends img element to div element .card-image
     cardContainer.appendChild(image)
-// appends span card-title to div element card
-    // cardContainer.appendChild(cardTitle)
-// appends div .card-image to div element card
-    // cardContainer.appendChild(cardImage)
-
 // renders and appends class card (description) to div element card
     cardContainer.appendChild(cardContent.render())
 // appends div element card to div element container
     carouselInner.appendChild(cardContainer)
-
 // returns div element container
     return cardContainer;
   } // end of render()
@@ -133,8 +120,4 @@ function createCards(projects) {
     projectDiv.appendChild(card.render())
   })
   document.querySelectorAll('.carousel-item')[0].classList.add('active');
-  // document.querySelectorAll('.carousel-item')[1].classList.add('carousel-item-next');
-  // document.querySelectorAll('.carousel-item')[2].classList.add('carousel-item-prev');
-
-
 }
