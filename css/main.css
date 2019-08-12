@@ -144,10 +144,22 @@ h3 {
 }
 
 footer {
+  display: flex;
+  justify-content: space-between;
   background-color: rgb(248,249,250);
   height: 54px;
   margin: 145px 5px 5px 5px;
   padding: 5px;
+}
+
+#social-links {
+  /* padding-right: 2%; */
+}
+
+#social-links a {
+  color: #333333;
+  font-size: 2rem;
+  padding-right: 10px;
 }
 
 #copyright {

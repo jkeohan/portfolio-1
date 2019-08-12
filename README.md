@@ -84,7 +84,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Carousel       | H |        3hrs |              - |        0.5hrs |
 | Google Sheets API | H |     2hrs |              - |            - |
 | Links to social | H |       0.5hrs |              - |          - |
-| Form functionality | H |    3hr |              - |            - |
+| Form functionality | H |    3hr |              - |            10mins |
 | Prior projects | M |       6hrs |              - |            - |
 | Name logo | L |             2hrs |              1hr |        1hr |
 | Total |       H |        6hrs|             5hrs |           5hrs |
