@@ -29,20 +29,11 @@ fetch(source)
 })
 
 /*********** EVENT LISTENERS & FUNCTION CALLS ***************/
-hamburgerMenu.addEventListener('click', updateHamburgerStyles);
+
 // removeHamburgerMenu();
 
 /*********** FUNCTION DEFINITIONS ***************/
 
-function updateHamburgerStyles() {
-  const hamburgerBio = document.getElementById('hamburger-bio');
-
-  hamburgerBio.style.padding = '5% 15%';
-  hamburgerBio.style.textAlign = 'center';
-  for (let i = 0; i < navLinks.length; i++) {
-    navLinks[i].style.textAlign = 'center';
-  }
-}
 
 // function removeHamburgerMenu() {
 //   // grab nav links

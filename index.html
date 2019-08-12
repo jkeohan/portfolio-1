@@ -21,19 +21,17 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <ul class="nav">
-            <li class="nav-item"><a href="#brand" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-            <li class="nav-item"><a href="#resources" class="nav-link">Resources</a></li>
-            <li class="nav-item"><a href="#contact-form" class="nav-link">Contact</a></li>
-          </ul>
-          <p id="hamburger-bio">Eloise Ress Barrow is a New York-based Full Stack Web Developer.</p>
+        <div class="navbar-nav nav">
+            <a href="#brand" class="nav-item nav-link">About</a>
+            <a href="#projects" class="nav-item nav-link">Projects</a>
+            <a href="#resources" class="nav-item nav-link">Resources</a>
+            <a href="#contact-form" class="nav-item nav-link">Contact</a>
+            <p id="hamburger-bio">Eloise Ress Barrow is a New York-based Full Stack Web Developer.</p>
         </div>
       </div>
     </nav>
   </header>
-  
+
   <div id="main" class="container-fluid" data-offset="0">
     <div class="row">
       <div id="intro" class="col-lg text-center">
@@ -69,6 +67,14 @@
     <div class="row">
       <div id="resources" class="col-lg text-center">
         <h3>Resources</h3>
+        <div id="flex-resources">
+          <div id="codepen">
+            <a href="https://codepen.io/purminator" alt="codepen.io"></a>
+          </div>
+          <div id="repl">
+            <a href="https://repl.it/@eloisebarrow" alt="repl"></a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -78,7 +84,7 @@
         <div id="contact-info">
           <div id="contact-details">
             <p>{EloiseBarrow@gmail.com}</p>
-            <p>||</p>
+            <p id="contact-or">||</p>
           </div>
           <form>
             <div class="form-group">
