@@ -47,8 +47,8 @@ My reach goals are to add a customized logo to the mobile version and revise pas
 |Day 1| Project Description | Complete
 |Day 1| Wireframes / Priority Matrix / Timeline | Complete
 |Day 3| Core Application Structure (HTML, CSS, etc.) | Complete
-|Day 4| MVP & Bug Fixes | Incomplete
-|Day 5| Final Touches | Incomplete
+|Day 4| MVP & Bug Fixes | Complete
+|Day 5| Final Touches | Ongoing
 |Day 6| Present | Incomplete
 
 ## MOSCOW Map
@@ -64,7 +64,7 @@ The functionality will then be divided into two separate lists: MVP and PostMVP.
 - Mobile first design + desktop layout
 - Add functional effects e.g. hamburger menu for nav bar, scrolling functionality that will be connected to the nav bar, and carousel to display projects
 - Connect projects to portfolio using Google Sheets API
-- Link to LinkedIn, GitHub and resume
+- Link to LinkedIn and GitHub
 - Contact form functionality
 
 #### PostMVP
