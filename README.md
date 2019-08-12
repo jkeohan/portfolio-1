@@ -78,16 +78,16 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Layout and Structure | H |  3hrs|           3hrs |          5hrs |
-| Hamburger Menu | H |        1hr |       0.5hrs - |        0.5hrs |
-| Scrolling/nav  | H |        2hrs |               |         2mins |
-| Carousel       | H |        3hrs |              - |       0.5hrs |
-| Google Sheets API | H |     2hrs |              - |         2hrs |
-| Links to social | H |       0.5hrs |              - |     30mins |
-| Form functionality | H |    3hr |              - |        10mins |
-| Prior projects | M |       6hrs |              - |            - |
-| Name logo | L |             2hrs |              1hr |        1hr |
-| Total |       H |        6hrs|             5hrs |           5hrs |
+| Layout and Structure | H |  3hrs |            |          6hrs |
+| Hamburger Menu | H |         1hr |            |          4hrs |
+| Scrolling/nav  | H |        2hrs |            |          3hrs |
+| Carousel       | H |        3hrs |            |          4hrs |
+| Google Sheets API | H |     2hrs |            |          4hrs |
+| Links to social | H |     0.5hrs |            |        30mins |
+| Form functionality | H |     3hr |            |        10mins |
+| Prior projects | M |        6hrs |            |             - |
+| Name logo | L |             2hrs |            |           1hr |
+| Total |       H |        22.5hrs|             |  22hrs 40mins |
 
 ## Helper Functions
 Helper functions should be generic enough that they can be reused in other applications. I'll use this section to document all helper functions I use.
@@ -142,4 +142,4 @@ Here I will list of all major issues encountered and their resolutions.
 **RESOLUTION**: I was applying the data- tags to my 'main' div but had to apply them to the 'body' tag.
 
 **ERROR**: Carousel images 'jumped' down each time a new one loaded.
-**RESOLUTION**: I had to add a max-height to each carousel images' container & to the images' parent container.
+**RESOLUTION**: I had to add a max-height to each carousel images' container & to each container's parent container.
