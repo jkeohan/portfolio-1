@@ -1,6 +1,6 @@
 /*********** VARIABLES ***************/
-const hamburgerMenu = document.getElementById('hamburger-menu');
-const navLinks = document.getElementsByClassName('nav-link');
+
+
 
 /************* LINKING GOOGLE SHEETS **********/
 let originalURL =
@@ -30,24 +30,27 @@ fetch(source)
 
 /*********** EVENT LISTENERS & FUNCTION CALLS ***************/
 
-// removeHamburgerMenu();
+removeHamburgerMenu();
 
 /*********** FUNCTION DEFINITIONS ***************/
+function removeHamburgerMenu() {
+  const navLinks = document.getElementsByClassName('nav-link');
 
+  for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener('click', () => {
+      removeHamburgerStyles();
+    })
+  }
+}
 
-// function removeHamburgerMenu() {
-//   // grab nav links
-//   // if a nav link is clicked, toggle the hamburger menu
-//   const navCollapse = document.querySelector('.navbar-collapse');
-//   console.log('this is navCollapse', navCollapse)
-//   navLinks.forEach( (e, i) => {
-//     e.addEventListener('click', () => {
-//       hamburgerMenu.classList.add('collapsed');
-//       hamburgerMenu.setAttribute('aria-expanded', 'false');
-//       navCollapse.classList.remove('show');
-//     })
-//   })
-// }
+function removeHamburgerStyles() {
+  const navCollapse = document.querySelector('.navbar-collapse');
+  const hamburgerMenu = document.getElementById('hamburger-menu');
+
+  hamburgerMenu.classList.add('collapsed');
+  hamburgerMenu.setAttribute('aria-expanded', 'false');
+  navCollapse.classList.remove('show');
+}
 
 /********* CREATE CAROUSEL CARDS **********/
 class Card {

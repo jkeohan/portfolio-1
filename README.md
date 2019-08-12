@@ -78,13 +78,13 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Layout and Structure | H |  3hrs|           3hrs |         5hrs |
-| Hamburger Menu | H |        1hr |       0.5hrs - |         0.5hrs |
+| Layout and Structure | H |  3hrs|           3hrs |          5hrs |
+| Hamburger Menu | H |        1hr |       0.5hrs - |        0.5hrs |
 | Scrolling/nav  | H |        2hrs |               |         2mins |
-| Carousel       | H |        3hrs |              - |        0.5hrs |
-| Google Sheets API | H |     2hrs |              - |            - |
-| Links to social | H |       0.5hrs |              - |          - |
-| Form functionality | H |    3hr |              - |            10mins |
+| Carousel       | H |        3hrs |              - |       0.5hrs |
+| Google Sheets API | H |     2hrs |              - |         2hrs |
+| Links to social | H |       0.5hrs |              - |     30mins |
+| Form functionality | H |    3hr |              - |        10mins |
 | Prior projects | M |       6hrs |              - |            - |
 | Name logo | L |             2hrs |              1hr |        1hr |
 | Total |       H |        6hrs|             5hrs |           5hrs |
@@ -97,15 +97,36 @@ Helper functions should be generic enough that they can be reused in other appli
 | Example | Example |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and their role in the project.
+  For this project I used the following libraries & packages:
+
+  Bootstrap - provided navbar, 'Projects' carousel, scrollyspy functionality and contact form.
+  Formspree - provided form functionality.
+  Fontawesome - provided images of Github and Linkedin logos.
 
 ## Code Snippet
 
-Code snippet (functionality and description) that I am proud of:   
+Code snippet (functionality and description) that I am proud of:
+
+The code snippet below retracts the hamburger menu once a link is clicked. Initially I struggled trying to use the forEach method so I switched to using a for loop and got it working. Once it worked, I refactored my initial function into two different bitesize functions so that I can reuse one or the other if needed (perhaps to loop through the navLinks, for example).   
 
 ```
-function example() {
-	// here is the code
+function removeHamburgerMenu() {
+  const navLinks = document.getElementsByClassName('nav-link');
+
+  for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener('click', () => {
+      removeHamburgerStyles();
+    })
+  }
+}
+
+function removeHamburgerStyles() {
+  const navCollapse = document.querySelector('.navbar-collapse');
+  const hamburgerMenu = document.getElementById('hamburger-menu');
+
+  hamburgerMenu.classList.add('collapsed');
+  hamburgerMenu.setAttribute('aria-expanded', 'false');
+  navCollapse.classList.remove('show');
 }
 ```
 
@@ -117,5 +138,8 @@ Here I will document what changes were made and the reasoning behind those chang
 
 Here I will list of all major issues encountered and their resolutions.
 
-**ERROR**:                               
-**RESOLUTION**:
+**ERROR**: Scrollspy recognized 'active' class on only one element.
+**RESOLUTION**: I was applying the data- tags to my 'main' div but had to apply them to the 'body' tag.
+
+**ERROR**: Carousel images 'jumped' down each time a new one loaded.
+**RESOLUTION**: I had to add a max-height to each carousel images' container & to the images' parent container.
