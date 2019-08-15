@@ -69,12 +69,13 @@ class Card {
     cardContainer.classList.add('carousel-item');
     cardContainer.setAttribute('data-touch', 'true');
 // create img element for & add current image
-    const image  = document.createElement('img')
+    const image = document.createElement('img')
     image.setAttribute('src', this.image)
+    image.style.backgroundSize = 'cover';
     image.classList.add('d-block', 'w-100')
 // creates class for content and adds current card description to it
     const cardContent = new CardContent(this.description)
-    console.log('this is cardContent: ', cardContent)
+    // console.log('this is cardContent: ', cardContent)
 // appends img element to div element .card-image
     cardContainer.appendChild(image)
 // renders and appends class card (description) to div element card
@@ -105,6 +106,7 @@ class CardContent {
     return cardContent
   } // end of render()
 } // end of class CardContent
+
 
 function createCards(projects) {
   const projectDiv = document.querySelector('.carousel-inner')
