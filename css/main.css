@@ -100,28 +100,15 @@ body {
   text-align: center;
 }
 
-#resources {
+#writing {
   background-color: papayawhip;
   color: #333333;
+  font-weight: 500;
+  line-height: 1rem;
 }
 
-#flex-resources {
-  display: flex;
-  justify-content: space-around;
-}
-
-#codepen {
-  width: 200px;
-  height: 200px;
-  margin: 0 2%;
-  background-image: url('../images/codepen.png');
-}
-
-#repl {
-  width: 200px;
-  height: 200px;
-  margin: 0 2%;
-  background-image: url('../images/repl.png');
+#writing a:hover {
+  text-decoration: underline;
 }
 
 #contact-form {

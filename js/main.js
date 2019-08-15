@@ -71,7 +71,6 @@ class Card {
 // create img element for & add current image
     const image = document.createElement('img')
     image.setAttribute('src', this.image)
-    image.style.backgroundSize = 'cover';
     image.classList.add('d-block', 'w-100')
 // creates class for content and adds current card description to it
     const cardContent = new CardContent(this.description)
