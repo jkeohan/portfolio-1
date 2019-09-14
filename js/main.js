@@ -1,31 +1,25 @@
 /*********** VARIABLES ***************/
-
-
-
 /************* LINKING GOOGLE SHEETS **********/
-let originalURL =
-'https://docs.google.com/spreadsheets/d/1NydoL_oDQr2cmgVhuqgbiOQpwQCJZmI5-VkcVMgmJ5Q/edit#gid=0'
 
 // ID COMES FROM THE URL THAT IS IN THE ADDRESS BAR ONCE THE SHEET HAS BEEN CREATED/SHARED
-let id =  '1NydoL_oDQr2cmgVhuqgbiOQpwQCJZmI5-VkcVMgmJ5Q'
+const id =  '1NydoL_oDQr2cmgVhuqgbiOQpwQCJZmI5-VkcVMgmJ5Q'
 
 // BELOW URL IS HOW GOOGLE ALLOWS US TO ACCESS THE SHARED FILE AS JSON
-let source = `https://spreadsheets.google.com/feeds/list/${id}/od6/public/values?alt=json`
+const source = `https://spreadsheets.google.com/feeds/list/${id}/od6/public/values?alt=json`
 
 // FETCH GOOGLE SHEETS API
-fetch(source)
-  .then (res => res.json())
-  .then (data => {
-
-     let projects = data.feed.entry.map( d => {
-       return {
-          title: d.gsx$title.$t,
-          image: d.gsx$image.$t,
-          description: d.gsx$description.$t
-       }
-     })
-     // console.log('this is  projects', projects)
-     createCards(projects)
+fetch(source).then(res => res.json()).then((data) => {
+  let projects = data.feed.entry.map( d => {
+   return {
+      title: d.gsx$title.$t,
+      image: d.gsx$image.$t,
+      description: d.gsx$description.$t,
+      liveLink: d.gsx$livelink.$t,
+      githubLink: d.gsx$githublink.$t,
+   }
+ });
+  console.log('this is data:', projects)
+  createCards(projects)
 })
 
 /*********** EVENT LISTENERS & FUNCTION CALLS ***************/
@@ -33,6 +27,7 @@ fetch(source)
 removeHamburgerMenu();
 
 /*********** FUNCTION DEFINITIONS ***************/
+
 function removeHamburgerMenu() {
   const navLinks = document.getElementsByClassName('nav-link');
 
@@ -58,61 +53,80 @@ class Card {
     this.title = obj.title
     this.image = obj.image
     this.description = obj.description
+    this.liveLink = obj.liveLink
+    this.githubLink = obj.githubLink
   }
 
   render() {
-// target carousel-inner (container for all carousel-items) & create div that will hold each image
-    const carouselInner = document.querySelector('.carousel-inner');
-    console.log(carouselInner);
-  // create div that holds each carousel image
-    const cardContainer = document.createElement('div')
-    cardContainer.classList.add('carousel-item');
-    cardContainer.setAttribute('data-touch', 'true');
-// create img element for & add current image
+    // target carousel-inner (container for all carousel-items) & create div that will hold each image
+    const cardDiv = document.createElement('div');
+    cardDiv.classList.add('card')
+    // create img element for & add current image
     const image = document.createElement('img')
     image.setAttribute('src', this.image)
-    image.classList.add('d-block', 'w-100')
-// creates class for content and adds current card description to it
-    const cardContent = new CardContent(this.description)
-    // console.log('this is cardContent: ', cardContent)
-// appends img element to div element .card-image
-    cardContainer.appendChild(image)
-// renders and appends class card (description) to div element card
-    cardContainer.appendChild(cardContent.render())
-// appends div element card to div element container
-    carouselInner.appendChild(cardContainer)
-// returns div element container
-    return cardContainer;
+    image.classList.add('card-img-top')
+    // grab div with id projects
+    const projectsDiv = document.getElementById('projects');
+    // creates class for content and adds current card description to it
+    const cardContent = new CardContent(this.title, this.description, this.liveLink, this.githubLink)
+    // appends div element card to div element container
+    projectsDiv.appendChild(cardDiv)
+    // appends img element to div element .card-image
+    cardDiv.appendChild(image)
+    // renders and appends class card (description) to div element card
+    cardDiv.appendChild(cardContent.render())
+    // returns div element container
+    return cardDiv;
   } // end of render()
 } // end of class Card
 
 class CardContent {
-  constructor(desc) {
+  constructor(title, desc, liveLink, githubLink) {
+    this.title = title
     this.desc = desc
+    this.liveLink = liveLink
+    this.githubLink = githubLink
   }
   render() {
-    // console.log('this is description: ', this.desc)
     // creates a div for card content (description of project)
-    const cardContent = document.createElement('div')
-// adds class card-content to above div
-    cardContent.classList.add('card-content');
-
-// creates p tag to add description text
-    const paragraph = document.createElement('p')
+    const cardBody = document.createElement('div')
+    // adds class card-content to above div
+    cardBody.classList.add('card-body');
+    // create h5 tag for project title
+    const cardTitle = document.createElement('h5');
+    cardTitle.classList.add('card-title');
+    cardTitle.innerText = this.title
+    // creates p tag to add description text
+    const paragraph = document.createElement('p');
+    paragraph.classList.add('card-text');
     paragraph.innerText = this.desc
+    // create buttons
+    const liveProjectLink = document.createElement('a');
+    liveProjectLink.classList.add('btn', 'btn-primary', 'live-link');
+    liveProjectLink.setAttribute('href', this.liveLink);
+    liveProjectLink.setAttribute('target', '_blank');
+    liveProjectLink.innerText = 'See the app'
 
-    cardContent.appendChild(paragraph)
-    return cardContent
+    const githubProjectLink = document.createElement('a');
+    githubProjectLink.setAttribute('href', this.githubLink);
+    githubProjectLink.setAttribute('target', '_blank');
+    githubProjectLink.classList.add('btn', 'btn-primary', 'github-link');
+    githubProjectLink.innerText = 'See the code'
+    //append all content to card's body
+    cardBody.appendChild(cardTitle)
+    cardBody.appendChild(paragraph)
+    cardBody.appendChild(liveProjectLink)
+    cardBody.appendChild(githubProjectLink)
+
+    return cardBody;
   } // end of render()
 } // end of class CardContent
 
-
 function createCards(projects) {
-  const projectDiv = document.querySelector('.carousel-inner')
+  const projectDiv = document.querySelector('#projects')
   projects.forEach( obj => {
     let card = new Card(obj)
-    // console.log('this is card', card)
+    console.log('this is card', card)
     projectDiv.appendChild(card.render())
   })
-  document.querySelectorAll('.carousel-item')[0].classList.add('active');
 }

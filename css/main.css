@@ -63,7 +63,6 @@ body {
 }
 
 #projects-header {
-  /* margin-bottom: 10%; */
   font-size: 2.5rem;
   letter-spacing: 1px;
   text-align: center;
@@ -73,31 +72,39 @@ body {
 #projects {
   background-color: white;
   color: #333333;
-  padding: 12% 5%;
-}
-
-.carousel {
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-}
-
-.carousel-inner {
-  overflow: visible;
-}
-
-.carousel-item {
-  max-width: 800px;
-  max-height: 500px;
-}
-
-.carousel-item img {
-  background-size: cover;
 }
 
 .card-content p {
   margin-top: 3%;
   text-align: center;
+}
+
+#projects {
+  display: flex;
+}
+
+.card {
+  margin: 1%;
+}
+
+.card img {
+  background-size: cover;
+}
+
+.live-link, .github-link {
+  width: 49%;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.live-link:hover, .github-link:hover {
+  background-color: papayawhip;
+  color: #000000;
+  border: none;
+}
+
+.live-link {
+  margin-right: 1%;
 }
 
 #writing {
@@ -109,6 +116,14 @@ body {
 
 #writing a:hover {
   text-decoration: underline;
+}
+
+#writing h3 {
+  margin-bottom: 1rem;
+}
+
+#writing p {
+  font-size: 1.2rem;
 }
 
 #contact-form {
@@ -201,20 +216,6 @@ footer {
 
   #projects {
     padding: 7% 0% 20% 0%;
-  }
-
-  /* .carousel {
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-  } */
-
-  .carousel-inner {
-    padding-left: 11%;
-    width: 90%;
-    height: 90%;
-    /* text-align: center; */
-    /* overflow: visible; */
   }
 
   #contact-form {
