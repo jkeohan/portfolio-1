@@ -59,7 +59,11 @@ body {
 
 #brand h4 {
   font-size: 2rem;
-  line-height: 3rem;
+  line-height: 4.5rem;
+}
+
+.brand-question {
+  font-style: italic;
 }
 
 #projects-header {
@@ -81,10 +85,11 @@ body {
 
 #projects {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .card {
-  margin: 1%;
+  margin: 4% 2%;
 }
 
 .card img {
@@ -92,9 +97,11 @@ body {
 }
 
 .live-link, .github-link {
-  width: 49%;
   background-color: #000000;
   color: #FFFFFF;
+  border: none;
+  margin: 1% 0;
+  align-self: center;
 }
 
 .live-link:hover, .github-link:hover {
@@ -191,6 +198,10 @@ footer {
     justify-content: space-around;
   }
 
+  #projects {
+    flex-wrap: nowrap;
+  }
+
   #contact-details, form {
     width: 50%;
   }
@@ -215,7 +226,7 @@ footer {
   }
 
   #projects {
-    padding: 7% 0% 20% 0%;
+
   }
 
   #contact-form {
