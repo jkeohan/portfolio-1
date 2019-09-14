@@ -53,8 +53,7 @@ body {
 #brand {
   background-color: papayawhip;
   color: #333333;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding: 40% 10%;
 }
 
 #brand h4 {
@@ -74,6 +73,8 @@ body {
 }
 
 #projects {
+  display: flex;
+  flex-wrap: wrap;
   background-color: white;
   color: #333333;
 }
@@ -81,11 +82,6 @@ body {
 .card-content p {
   margin-top: 3%;
   text-align: center;
-}
-
-#projects {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .card {
@@ -107,7 +103,7 @@ body {
 .live-link:hover, .github-link:hover {
   background-color: papayawhip;
   color: #000000;
-  border: none;
+  border: 1px solid black;
 }
 
 .live-link {
@@ -119,6 +115,10 @@ body {
   color: #333333;
   font-weight: 500;
   line-height: 1rem;
+}
+
+#writing a {
+  color: rgb(0,211,83);
 }
 
 #writing a:hover {
@@ -145,14 +145,14 @@ body {
 
 #submit-button {
   margin-top: 1rem;
-  background-color: #333333;
+  background-color: #000000;
   color: #FFFFFF;
   border: none;
 }
 
 #submit-button:hover {
-  background-color: #FFFFFF;
-  color: #333333;
+  background-color: papayawhip;
+  color: #000000;
   border: 1px solid black;
 }
 
@@ -198,6 +198,10 @@ footer {
     justify-content: space-around;
   }
 
+  #brand {
+    padding: 10%;
+  }
+
   #projects {
     flex-wrap: nowrap;
   }
@@ -221,7 +225,7 @@ footer {
 }
 
 @media (min-width: 900px) {
-  #intro, #brand {
+  #intro {
     padding: 26% 0%;
   }
 
