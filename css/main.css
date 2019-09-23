@@ -224,13 +224,16 @@ footer {
   }
 }
 
+@media (min-width: 660px) {
+  #intro {
+    height: 500px;
+    padding: 32% 5%;
+  }
+}
+
 @media (min-width: 900px) {
   #intro {
     padding: 26% 0%;
-  }
-
-  #projects {
-
   }
 
   #contact-form {
