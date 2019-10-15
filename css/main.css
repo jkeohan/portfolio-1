@@ -75,6 +75,7 @@ body {
 #projects {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   background-color: white;
   color: #333333;
 }
@@ -86,10 +87,19 @@ body {
 
 .card {
   margin: 4% 2%;
+  width: 300px;
+  height: 434px;
+  align-items: center;
+  position: relative;
 }
 
 .card img {
   background-size: cover;
+}
+
+.card-body {
+  position: absolute;
+  bottom: 0;
 }
 
 .live-link, .github-link {
@@ -203,7 +213,7 @@ footer {
   }
 
   #projects {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
 
   #contact-details, form {
