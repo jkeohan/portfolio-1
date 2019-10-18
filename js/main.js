@@ -18,7 +18,6 @@ fetch(source).then(res => res.json()).then((data) => {
       githubLink: d.gsx$githublink.$t,
    }
  });
-  console.log('this is data:', projects)
   createCards(projects)
 })
 
@@ -126,7 +125,6 @@ function createCards(projects) {
   const projectDiv = document.querySelector('#projects')
   projects.forEach( obj => {
     let card = new Card(obj)
-    console.log('this is card', card)
     projectDiv.appendChild(card.render())
   })
 }

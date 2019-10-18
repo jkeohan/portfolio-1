@@ -127,11 +127,11 @@ body {
   line-height: 1rem;
 }
 
-#writing a {
+#writing a, #resume-link {
   color: rgb(0,211,83);
 }
 
-#writing a:hover {
+#writing a:hover, #resume-link:hover {
   text-decoration: underline;
 }
 
