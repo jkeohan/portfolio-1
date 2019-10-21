@@ -34,9 +34,7 @@ I'm starting by building the basic layout and adding placeholder content. Once t
 
 My reach goals are to add a customized logo to the mobile version and revise past projects to ensure they're portfolio-ready.
 
-## MOSCOW Map  
-
-#### MVP
+## MVP
 
 - Mobile first design + desktop layout
 - Add functional effects e.g. hamburger menu for nav bar, scrolling functionality that will be connected to the nav bar, and carousel to display projects
@@ -44,7 +42,7 @@ My reach goals are to add a customized logo to the mobile version and revise pas
 - Link to LinkedIn and GitHub
 - Contact form functionality
 
-#### PostMVP
+## PostMVP
 
 - Update to prior projects
 - Add name logo to mobile layout
