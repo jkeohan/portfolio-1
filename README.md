@@ -1,5 +1,5 @@
 # My Portfolio
-
+- [repo](https://github.com/eloisebarrow/portfolio)
 - [View deployed site](http://eloiseressbarrow.com/)
 - [Read about my process](https://medium.com/@eloiseressbarrow/building-your-first-website-or-battling-your-inner-demogorgon-40803c82ec25)
 
